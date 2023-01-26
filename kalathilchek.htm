@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shiva Temple</title>
+  <style>
+    /* Add some random styles */
+    body {
+      background-color: #F5F5F5;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      color: #233;
+    }
+    p {
+      text-align: center;
+	padding-left: 260px;
+    	padding-right: 70px;
+    }
+    /* Add styles for the navigation bar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #333;
+      color: #fff;
+    }
+    nav a {
+      display: block;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #555;
+    }
+    /* Add styles for the menu icon */
+    .menu-icon {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      line-height: 30px;
+      cursor: pointer;
+    }
+    /* Add styles for the responsive layout */
+    @media only screen and (max-width
+@media only screen and (max-width: 768px) {
+      nav {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+        color: #333;
+        top: 50px;
+        left: -100%;
+        transition: all 0.3s ease;
+      }
+      nav.active {
+        left: 0;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Shiva Temple</h1>
+
+  <nav>
+    <a href="#about-us" onclick="loadAboutUs()">About Us</a>
+
+    <a href="#gallery" onclick="loadGallery()">Gallery</a>
+    <a href="#contact-info" onclick="loadContactInfo()">Contact Info</a>
+  </nav>
+
+  <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
+<div class="container">
+
+  <div class="row" >
+  <div class="col-3"></div>
+<div class="col-9" id="main-content">
+
+<p>Welcome to the website of our Hindu Shiva temple. Our temple is dedicated to Lord Shiva, one of the most revered deities in Hinduism.</p>
+  <img src="logovettakkaran.png" alt="Lord Vettakkaran" style="display: block; margin: auto;">
+  <h2>Temple History</h2>
+  <p>Our temple was built in the 12th century and is one of the oldest Shiva temples in the region. It is known for its beautiful architecture and intricate carvings.</p>
+  <h2>Temple Timings</h2>
+  <p>The temple is open from 6am to 9pm every day.</p>
+  
+</div>
+</div>
+	</div>
+  <script>
+    // Add a function to toggle the navigation bar
+    function toggleNav() {
+      var nav = document.querySelector("nav");
+      nav.classList.toggle("active");
+    }
+    // Add functions for loading the sample pages
+    function loadGallery() {
+      document.querySelector("#main-content").innerHTML = `
+        <h2>Gallery</h2>
+        <p>Here's where you would put the code for the Gallery page, using the Google Photos API to retrieve and display
+        <p>Here's where you would put the code for the Gallery page, using the Google Photos API to retrieve and display images from a Google Photos album. You can also use JavaScript to automatically rotate the images in the gallery page by using setInterval() function and changing the src of the image tag.</p>
+      `;
+    }
+    function loadAboutUs() {
+      document.querySelector("#main-content").innerHTML = `
+        <p>Welcome to the website of our Hindu Shiva temple. Our temple is dedicated to Lord Shiva, one of the most revered deities in Hinduism.</p>
+  <img src="logovettakkaran.png" alt="Lord Vettakkaran" style="display: block; margin: auto;">
+  <h2>Temple History</h2>
+  <p>Our temple was built in the 12th century and is one of the oldest Shiva temples in the region. It is known for its beautiful architecture and intricate carvings.</p>
+  <h2>Temple Timings</h2>
+  <p>The temple is open from 6am to 9pm every day.</p>
+      `;
+    }
+    function loadContactInfo() {
+      document.querySelector("#main-content").innerHTML = `
+        <h2>Contact Info</h2>
+<h2>Contact Us</h2>
+  <p>If you have any questions or would like to learn more about our temple, please contact us at:</p>
+  <p>Email: shiva_temple@example.com</p>
+  <p>Phone: +1 (555) 555-5555</p>
+        <p>Here's where you would put the contact information for the temple, including the address, phone number, and email address. You can also include a contact form for visitors to send messages to the temple.</p>
+      `;
+    }
+  </script>
+</body>
+</html>
