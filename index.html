@@ -94,10 +94,18 @@
     <img src="logovettakkaran.png" alt="Lord Vettakkaran" style="display: block; margin: auto;">
   </h1>
 
-  <nav>
+
+  <nav style="display: grid; justify-content: start; align-items: center;">
+    <a href="#about-us" onclick="loadAboutUs()"></a>
+    <a href="#about-us" onclick="loadAboutUs()"></a>
+
     <a href="#about-us" onclick="loadAboutUs()">Temple History</a>
     <a href="#gallery" onclick="loadGallery()">Gallery</a>
     <a href="#contact-info" onclick="loadContactInfo()">Contact Info</a>
+    <a href="#Events" onclick="loadEvents()">Events</a>
+    <a href="#Events" onclick="loadEvents()"></a>
+    <a href="#Events" onclick="loadEvents()"></a>
+
   </nav>
 
   <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
@@ -185,6 +193,14 @@
         <p>Temple Timings: The temple is usually open from 6am to 9am in the morning and from 5:30pm to 6:45pm in the evening every day.</p>
       `;
     }
+    //Events
+    function loadEvents() {
+      document.querySelector("#main-content").innerHTML = `
+        <h2>Events</h2>
+        <p>Pattumaholsavam</p>
+      `;
+    }
+    
   </script>
 </body>
 
