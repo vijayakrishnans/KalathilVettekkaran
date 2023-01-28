@@ -10,6 +10,24 @@
       font-family: Arial, sans-serif;
     }
 
+
+.photos {
+  width: 50%;
+  height: 60%;
+  position: absolute;
+  top: 300px;
+  left: 0;
+  transform: translateX(50%);
+  display: none;
+}
+#photo-container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+
+
     h1 {
       text-align: center;
       font-size: 3em;
@@ -100,7 +118,7 @@
     <a href="#about-us" onclick="loadAboutUs()"></a>
 
     <a href="#about-us" onclick="loadAboutUs()">Temple History</a>
-    <a href="#gallery" onclick="loadGallery()">Gallery</a>
+    <a href="#gallery" onclick="loadGallery();">Gallery</a>
     <a href="#contact-info" onclick="loadContactInfo()">Contact Info</a>
     <a href="#Events" onclick="loadEvents()">Events</a>
     <a href="#Events" onclick="loadEvents()"></a>
@@ -150,9 +168,18 @@
     function loadGallery() {
       document.querySelector("#main-content").innerHTML = `
         <h2>Gallery</h2>
-        <p>Here's where you would put the code for the Gallery page, using the Google Photos API to retrieve and display
-        <p>Here's where you would put the code for the Gallery page, using the Google Photos API to retrieve and display images from a Google Photos album. You can also use JavaScript to automatically rotate the images in the gallery page by using setInterval() function and changing the src of the image tag.</p>
+
+<div id="photo-container">
+      <img class="photos" src="image1.jpg" alt="Photo 1">
+      <img class="photos" src="image2.jpg" alt="Photo 2">
+      <img class="photos" src="image3.jpg" alt="Photo 3">
+      <img class="photos" src="image4.jpg" alt="Photo 4">
+      <img class="photos" src="image5.jpg" alt="Photo 5">
+
+    </div>
+
       `;
+      scrollerFunction();
     }
 
     //
@@ -200,7 +227,40 @@
         <p>Pattumaholsavam</p>
       `;
     }
-    
+    // Get the scroller element
+    function scrollerFunction(){
+      try{
+        var photos = document.getElementsByClassName("photos");
+      // index to keep track of current photo
+      var i = 0;
+
+      // function to fade in and out the photos
+      function fade() {
+        // loop through all photos and set display to none
+        for (var j = 0; j < photos.length; j++) {
+          photos[j].style.display = "none";
+        }
+        // set the current photo's display to block
+        photos[i].style.display = "block";
+        // increment the index for the next photo
+        i++;
+        // if the index is greater than or equal to the number of photos, reset to 0
+        if (i >= photos.length) {
+          i = 0;
+        }
+        // call the function every second
+        setTimeout(fade, 1000);
+      }
+
+      // call the function when the page loads
+      fade();
+      }catch{
+
+      }
+
+    }    
+
+
   </script>
 </body>
 
